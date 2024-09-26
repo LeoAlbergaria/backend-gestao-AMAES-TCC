@@ -8,6 +8,7 @@ import { join } from 'path';
 import { DocumentsModule } from './documents/documents.module';
 import { CollaboratorsModule } from './collaborators/collaborators.module';
 import { UsersModule } from './users/users.module';
+import { AuthModule } from './auth/auth.module';
 
 @Module({
   imports: [
@@ -27,7 +28,8 @@ import { UsersModule } from './users/users.module';
   StakeholdersModule,
   DocumentsModule,
   CollaboratorsModule,
-  UsersModule],
+  UsersModule,
+  AuthModule],
   controllers: [AppController],
   providers: [AppService],
 })

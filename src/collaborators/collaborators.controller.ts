@@ -2,7 +2,9 @@ import { Controller, Get, Post, Body, Patch, Param, Delete } from '@nestjs/commo
 import { CollaboratorsService } from './collaborators.service';
 import { CreateCollaboratorDto } from './dto/create-collaborator.dto';
 import { UpdateCollaboratorDto } from './dto/update-collaborator.dto';
+import { ApiTags } from '@nestjs/swagger';
 
+@ApiTags('Collaborators')
 @Controller('collaborators')
 export class CollaboratorsController {
   constructor(private readonly collaboratorsService: CollaboratorsService) {}

@@ -2,7 +2,9 @@ import { Controller, Get, Post, Body, Patch, Param, Delete } from '@nestjs/commo
 import { StakeholdersService } from './stakeholders.service';
 import { CreateStakeholderDto } from './dto/create-stakeholder.dto';
 import { UpdateStakeholderDto } from './dto/update-stakeholder.dto';
+import { ApiTags } from '@nestjs/swagger';
 
+@ApiTags('Stakeholders')
 @Controller('stakeholders')
 export class StakeholdersController {
   constructor(private readonly stakeholdersService: StakeholdersService) {}
