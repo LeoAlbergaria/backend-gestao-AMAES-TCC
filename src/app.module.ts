@@ -6,6 +6,7 @@ import { ConfigModule } from '@nestjs/config';
 import { TypeOrmModule } from '@nestjs/typeorm';
 import { join } from 'path';
 import { DocumentsModule } from './documents/documents.module';
+import { CollaboratorsModule } from './collaborators/collaborators.module';
 
 @Module({
   imports: [
@@ -23,7 +24,8 @@ import { DocumentsModule } from './documents/documents.module';
     synchronize: true,
   }),
   StakeholdersModule,
-  DocumentsModule],
+  DocumentsModule,
+  CollaboratorsModule],
   controllers: [AppController],
   providers: [AppService],
 })
