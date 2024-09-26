@@ -7,6 +7,7 @@ import { TypeOrmModule } from '@nestjs/typeorm';
 import { join } from 'path';
 import { DocumentsModule } from './documents/documents.module';
 import { CollaboratorsModule } from './collaborators/collaborators.module';
+import { UsersModule } from './users/users.module';
 
 @Module({
   imports: [
@@ -25,7 +26,8 @@ import { CollaboratorsModule } from './collaborators/collaborators.module';
   }),
   StakeholdersModule,
   DocumentsModule,
-  CollaboratorsModule],
+  CollaboratorsModule,
+  UsersModule],
   controllers: [AppController],
   providers: [AppService],
 })
