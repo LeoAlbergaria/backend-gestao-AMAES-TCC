@@ -1,7 +1,9 @@
-import { IsString, IsEmail, IsOptional, IsEnum, IsNumber, IsDateString } from 'class-validator';
+import { IsString, IsEmail, IsOptional, IsEnum, IsNumber, IsDateString, ValidateNested } from 'class-validator';
 import { WorkRegime } from '../enums/work-regime.enum';
 import { WorkLoad } from '../enums/work-load.enum'; 
 import { ApiProperty } from '@nestjs/swagger';
+import { Type } from 'class-transformer';
+import { CreateAddressDto } from 'src/addresses/dto/create-address.dto';
 
 export class CreateCollaboratorDto {
   @ApiProperty()
@@ -83,4 +85,8 @@ export class CreateCollaboratorDto {
   @ApiProperty()
   @IsEnum(WorkLoad)
   workLoad: WorkLoad;
+
+  @ValidateNested()
+  @Type(() => CreateAddressDto)
+  address: CreateAddressDto;
 }

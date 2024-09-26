@@ -1,6 +1,7 @@
-import { Entity, Column, PrimaryGeneratedColumn } from 'typeorm';
+import { Entity, Column, PrimaryGeneratedColumn, OneToOne, JoinColumn } from 'typeorm';
 import { WorkRegime } from '../enums/work-regime.enum';
 import { WorkLoad } from '../enums/work-load.enum';
+import { Address } from 'src/addresses/entities/address.entity';
 
 @Entity()
 export class Collaborator {
@@ -73,4 +74,9 @@ export class Collaborator {
         nullable: false,
     })
     workLoad: WorkLoad;
+
+
+  @OneToOne(() => Address, { cascade: true, eager: true })
+  @JoinColumn()
+  address: Address;
 }

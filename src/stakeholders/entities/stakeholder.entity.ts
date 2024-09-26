@@ -1,4 +1,5 @@
-import { Entity, Column, PrimaryGeneratedColumn } from 'typeorm';
+import { Address } from 'src/addresses/entities/address.entity';
+import { Entity, Column, PrimaryGeneratedColumn, OneToOne, JoinColumn } from 'typeorm';
 
 @Entity()
 export class Stakeholder {
@@ -28,4 +29,8 @@ export class Stakeholder {
 
   @Column({ type: 'text', nullable: false })
   representative: string;
+
+  @OneToOne(() => Address, { cascade: true, eager: true }) 
+  @JoinColumn()
+  address: Address;
 }
