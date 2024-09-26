@@ -5,6 +5,7 @@ import { StakeholdersModule } from './stakeholders/stakeholders.module';
 import { ConfigModule } from '@nestjs/config';
 import { TypeOrmModule } from '@nestjs/typeorm';
 import { join } from 'path';
+import { DocumentsModule } from './documents/documents.module';
 
 @Module({
   imports: [
@@ -21,7 +22,8 @@ import { join } from 'path';
     entities: [join(process.cwd(), 'dist/**/*.entity.js')],
     synchronize: true,
   }),
-  StakeholdersModule],
+  StakeholdersModule,
+  DocumentsModule],
   controllers: [AppController],
   providers: [AppService],
 })
