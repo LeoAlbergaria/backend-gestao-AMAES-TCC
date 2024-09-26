@@ -23,14 +23,17 @@ export class UsersController {
   findOne(@Param('id') id: string) {
     return this.usersService.findOne(+id);
   }
+  
+  @Get('email/:email')
+  async findByEmail(@Param('email') email: string) {
+    return await this.usersService.findOneByEmail(email);
+  }
 
-  // Update a user by ID
   @Patch(':id')
   update(@Param('id') id: string, @Body() updateUserDto: UpdateUserDto) {
     return this.usersService.update(+id, updateUserDto);
   }
 
-  // Delete a user by ID
   @Delete(':id')
   remove(@Param('id') id: string) {
     return this.usersService.remove(+id);

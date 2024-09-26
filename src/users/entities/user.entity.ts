@@ -1,7 +1,8 @@
-import { Entity, Column, PrimaryGeneratedColumn } from 'typeorm';
+import { Entity, Column, PrimaryGeneratedColumn, BeforeInsert, BeforeUpdate } from 'typeorm';
 import { UserType } from '../enums/user-type.enum';
 import { UserRole } from '../enums/user-role.enum';
 import { Unit } from '../enums/unit.enum';
+import * as bcrypt from 'bcrypt';
 
 @Entity()
 export class User {
@@ -48,4 +49,13 @@ export class User {
     nullable: false,
   })
   unit: Unit;
+
+  @BeforeInsert()
+  @BeforeUpdate()
+  async hashPassword() {
+    if (this.password) {
+      const salt = await bcrypt.genSalt();
+      this.password = await bcrypt.hash(this.password, salt);
+    }
+  }
 }
