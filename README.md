@@ -22,64 +22,69 @@
   <!--[![Backers on Open Collective](https://opencollective.com/nest/backers/badge.svg)](https://opencollective.com/nest#backer)
   [![Sponsors on Open Collective](https://opencollective.com/nest/sponsors/badge.svg)](https://opencollective.com/nest#sponsor)-->
 
-## Description
+# Sistema de Gestão Administrativo-Financeiro da AMAES
 
-[Nest](https://github.com/nestjs/nest) framework TypeScript starter repository.
+Este repositório contém o código-fonte do backend do sistema de gestão administrativo-financeiro desenvolvido para a AMAES (Associação dos Amigos dos Autistas do Espírito Santo). Este projeto está sendo realizado como parte do Trabalho de Conclusão de Curso (TCC) do aluno Leonardo Franco Emerick Albergaria, do curso de Ciência de Computação da Universidade Federal do Espírito Santo.
 
-## Project setup
+## Descrição do Projeto
 
-```bash
-$ npm install
-```
+O objetivo deste projeto é desenvolver um sistema robusto para auxiliar a AMAES no gerenciamento de suas operações administrativas e financeiras, incluindo:
 
-## Compile and run the project
+- **Cadastro e gerenciamento de usuários e colaboradores**: Controle completo de diferentes tipos de usuários e colaboradores da instituição.
+- **Controle de stakeholders e recursos financeiros**: Monitoramento e gerenciamento de todas as partes interessadas e dos recursos financeiros associados.
+- **Processamento de ordens de pagamento**: Processamento eficiente de ordens de pagamento com validação por administradores.
+- **Cadastro e monitoramento de documentos**: Armazenamento de documentos físicos digitalizados e gerenciamento de expirações de alvarás e permissões.
+- **Importação e exportação de dados**: Facilitação da manipulação de dados através de importação e exportação em formatos como Excel (.xlsx).
+- **Integração com APIs**: Utilização de APIs para processamento e armazenamento de dados, permitindo operações como importação e exportação de informações.
 
-```bash
-# development
-$ npm run start
+## Tecnologias Utilizadas
 
-# watch mode
-$ npm run start:dev
+- **NestJS**: Framework para desenvolvimento do backend em Node.js e TypeScript.
+- **TypeORM**: Ferramenta de mapeamento objeto-relacional para interagir com o banco de dados.
+- **PostgreSQL**: Banco de dados relacional utilizado para armazenamento persistente.
+- **Docker**: Utilizado para containerização do banco de dados e replicação do ambiente de desenvolvimento.
+- **Swagger**: Ferramenta para documentação automática e interativa da API.
+- **Postman**: Utilizado para testar e validar os endpoints da API.
 
-# production mode
-$ npm run start:prod
-```
+## Como Executar o Projeto
 
-## Run tests
+Siga os passos abaixo para configurar e executar o projeto localmente:
 
-```bash
-# unit tests
-$ npm run test
+1. **Clonar o repositório**:
 
-# e2e tests
-$ npm run test:e2e
+    ```bash
+    git clone https://github.com/LeoAlbergaria/backend-gestao-AMAES-TCC.git
+    ```
 
-# test coverage
-$ npm run test:cov
-```
+2. **Instalar as dependências**:
 
-## Resources
+    ```bash
+    cd backend-gestao-AMAES-TCC
+    npm install
+    ```
 
-Check out a few resources that may come in handy when working with NestJS:
+3. **Configurar o banco de dados**:
 
-- Visit the [NestJS Documentation](https://docs.nestjs.com) to learn more about the framework.
-- For questions and support, please visit our [Discord channel](https://discord.gg/G7Qnnhy).
-- To dive deeper and get more hands-on experience, check out our official video [courses](https://courses.nestjs.com/).
-- Visualize your application graph and interact with the NestJS application in real-time using [NestJS Devtools](https://devtools.nestjs.com).
-- Need help with your project (part-time to full-time)? Check out our official [enterprise support](https://enterprise.nestjs.com).
-- To stay in the loop and get updates, follow us on [X](https://x.com/nestframework) and [LinkedIn](https://linkedin.com/company/nestjs).
-- Looking for a job, or have a job to offer? Check out our official [Jobs board](https://jobs.nestjs.com).
+    - Certifique-se de ter o Docker instalado.
+    - Suba o contêiner do PostgreSQL.
 
-## Support
+4. **Configurar variáveis de ambiente**:
 
-Nest is an MIT-licensed open source project. It can grow thanks to the sponsors and support by the amazing backers. If you'd like to join them, please [read more here](https://docs.nestjs.com/support).
+    - Crie um arquivo `.env.development.local`.
+    - Adicione as variáveis de ambiente conforme necessário.
 
-## Stay in touch
+5. **Executar a aplicação**:
 
-- Author - [Kamil Myśliwiec](https://twitter.com/kammysliwiec)
-- Website - [https://nestjs.com](https://nestjs.com/)
-- Twitter - [@nestframework](https://twitter.com/nestframework)
+    ```bash
+    npm run start
+    ```
 
-## License
+6. **Acessar a documentação da API**:
 
-Nest is [MIT licensed](https://github.com/nestjs/nest/blob/master/LICENSE).
+    - Acesse [http://localhost:3000/api](http://localhost:3000/api) para visualizar a documentação gerada pelo Swagger.
+
+## Contato
+
+Para mais informações sobre o projeto:
+
+- Aluno: Leonardo Franco Emerick Albergaria (leonardo.albergaria@edu.ufes.br)
